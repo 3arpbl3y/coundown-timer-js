@@ -8,7 +8,22 @@ export default class Timer {
       control: root.querySelector("timer__btn--control"),
       reset: root.querySelector("timer__btn--reset"),
     };
+
+    this.interval = null;
+    this.remainingSeconds = 90;
+
+    this.updateInterfaceTime();
+
+    this.el.control.onclick = () => {};
+
+    this.el.reset.onclick = () => {};
   }
+
+  updateInterfaceTime() {
+    const minutes = Math.floor(this.remainingSeconds / 60);
+    const seconds = this.remainingSeconds % 60;
+  }
+
   static getHTML() {
     return `
 	  <span class="timer__part timer__part--minutes">00</span>
